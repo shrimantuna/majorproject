@@ -11,6 +11,7 @@ module.exports = {
         border: "var(--border)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        ring: "var(--ring)",
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
@@ -39,6 +40,12 @@ module.exports = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+      },
+      ringColor: {
+        DEFAULT: "var(--ring)",
+      },
+      ringOffsetColor: {
+        DEFAULT: "var(--background)",
       },
     },
   },
