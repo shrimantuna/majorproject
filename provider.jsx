@@ -1,5 +1,5 @@
 "use client"
-import { UserdetailContext } from './context/UserDetailContext';
+import { UserDetailContext } from './context/UserDetailContext';
 import { supabase } from './services/supabaseClient'
 import React, { useEffect, useState } from 'react'
 
@@ -57,8 +57,8 @@ function Provider({ children }) {
 }
 export default Provider
 
-export const useUser = ()=> {
-    const context = useContext{UserDetailContext};
-    
+export const useUser = () => {
+    const context = useContext{ UserDetailContext };
+
     return context;
 }
