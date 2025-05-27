@@ -11,6 +11,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { SidebarOptions } from "@/services/Constants";
+import { Link, Option, OptionIcon, Plus } from "lucide-react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function AppSidebar() {
 
@@ -33,9 +37,9 @@ export function AppSidebar() {
           <SidebarMenu>
             {SidebarOptions.map((option, index) => (
               <SidebarMenuItem key={index} className='p-1'>
-                <SidebarMenuButton asChild className='p-5'>
+                <SidebarMenuButton asChild className={'p-5'}>
                   <Link href={option.path}>
-                    <option.icon className={`${path == option.path && 'text-primary'}`}/>
+                    <option.icon className={`${path == option.path && 'text-primary'}`} />
                     <span className={`text-[12px] font-medium ${path == option.path && 'text-primary'}`}>{option.name}</span>
 
                   </Link>

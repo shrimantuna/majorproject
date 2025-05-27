@@ -2,7 +2,7 @@ import { Calendar, LayoutDashboard, List, Settings, WalletCards } from "lucide-r
 
 export const SidebarOptions=[
     {
-        name: 'Dashbaord',
+        name: 'Dashboard',
         icon:LayoutDashboard,
         path:'/dashbaord'
     },
