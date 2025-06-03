@@ -6,7 +6,10 @@ function DashbaordLayout({ children }) {
         <div className='bg-secondary'>
             <DashboardProvider>
                 <div className='p-8'>
-                    {children}
+                  
+                        {children}
+                  
+
                 </div>
             </DashboardProvider>
 

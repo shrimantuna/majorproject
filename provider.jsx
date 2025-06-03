@@ -35,7 +35,10 @@ function Provider({ children }) {
                         }
                     ])
                 console.log(data);
-                setUser(data);
+                if(data&&data.length>0){
+                    
+                    setUser(data [0]);
+                }
                 return;
 
             }
@@ -58,8 +61,7 @@ function Provider({ children }) {
 export default Provider
 
 export const useUser = () => {
-    const context = useContext
-     { UserDetailContext };
+    const context = useContext (UserDetailContext);
 
     return context;
 }

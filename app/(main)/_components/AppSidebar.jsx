@@ -12,7 +12,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { SidebarOptions } from "@/services/Constants";
-import { Link, Option, OptionIcon, Plus } from "lucide-react";
+import { Option, OptionIcon, Plus } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -26,9 +27,9 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className='flex items-center mt-5' />
       <Image src={'/logo.png'} alt="logo" width={120} height={80}
-        className="w-[120px]"
+        className="w-[120px] mx-auto"
       />
-      <Button classname='w-full mt-5'>
+      <Button className='w-[90%] mt-5 mx-auto'>
         <Plus /> Create new Interview
       </Button>
       <SidebarContent>
@@ -37,7 +38,7 @@ export function AppSidebar() {
           <SidebarMenu>
             {SidebarOptions.map((option, index) => (
               <SidebarMenuItem key={index} className='p-1'>
-                <SidebarMenuButton asChild className={'p-5'}>
+                <SidebarMenuButton asChild className={`p-5 ${path == option.path && 'text-primary bg-blue-50'}`}>
                   <Link href={option.path}>
                     <option.icon className={`${path == option.path && 'text-primary'}`} />
                     <span className={`text-[12px] font-medium ${path == option.path && 'text-primary'}`}>{option.name}</span>

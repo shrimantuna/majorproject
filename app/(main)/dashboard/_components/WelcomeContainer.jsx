@@ -6,7 +6,7 @@ import React from 'react'
 function WelcomeContainer() {
     const { user } = useUser();
     return (
-        <div className='bg-white p-5 rounded-xl flex justify-between items-center'>
+        <div className='bg-white p-5 rounded-xl flex justify-between items-center mt-5 mx-10'>
             <div>
 
                 <h2 className='textlg font-bold'>
