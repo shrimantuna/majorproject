@@ -27,7 +27,7 @@ function Login() {
           alt="logo"
           width={100}
           height={40}
-          className="w-[250px]"
+          className="w-[160px] mb-10"
         />
         <div className="flex items-center flex-col border rounded-2xl p-8">
           <Image
