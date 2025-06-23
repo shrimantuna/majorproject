@@ -30,7 +30,7 @@ export default function Home() {
         <Button onClick={handleClick} className={'w-[160px]'}> <User2Icon /> Create Account</Button>
       </div>
 
-      <div id="home" className="flex justify-between gap-2 px-40 py-20 bg-gradient-to-b from-blue-100 to-white">
+      <div id="home" className="flex justify-between gap-2 px-40 py-30 bg-gradient-to-b from-blue-100 to-white">
 
         <div className="flex flex-col px-10 py-10 w-[700px]">
           <h1 className="text-5xl font-bold mb-6">
@@ -75,9 +75,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div  id="how-it-works" className="text-center bg-gray-50 px-40 py-20">
+      <div  id="how-it-works" className="text-center bg-gray-50 px-40 py-30">
         <div className="flex flex-col text-center mb-14">
-          <h2 className="text-4xl font-bold mb-4"> How AiRecruiter Works </h2>
+          <h2 className="text-4xl font-bold mb-4"> How AiRec ruiter Works </h2>
           <p> Three simple steps to transform your recruitment process.</p>
         </div>
 
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="cta" className="text-center px-40 py-20">
+      <div id="cta" className="text-center px-40 py-30">
         <div className="flex flex-col text-center mb-14">
           <h2 className="text-4xl font-bold mb-4"> Ready to Transform Your Hiring Process? </h2>
           <p> Join hundreds of companies already using AiCruiter to find the best talent. </p>
