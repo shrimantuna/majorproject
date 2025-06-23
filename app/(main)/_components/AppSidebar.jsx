@@ -16,11 +16,18 @@ import { Option, OptionIcon, Plus } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 export function AppSidebar() {
 
   const path = usePathname();
   console.log(path);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/dashboard/create-interview');
+  };
 
 
   return (
@@ -29,7 +36,7 @@ export function AppSidebar() {
       <Image src={'/logo.png'} alt="logo" width={120} height={80}
         className="w-[120px] mx-auto"
       />
-      <Button className='w-[90%] mt-5 mx-auto'>
+      <Button onClick={handleClick} className='w-[90%] mt-5 mx-auto'>
         <Plus /> Create new Interview
       </Button>
       <SidebarContent>

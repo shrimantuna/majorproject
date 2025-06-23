@@ -76,12 +76,12 @@ export default function Home() {
       </div>
 
       <div  id="how-it-works" className="text-center bg-gray-50 px-40 py-30">
-        <div className="flex flex-col text-center mb-14">
+        <div className="flex flex-col text-center mb-20">
           <h2 className="text-4xl font-bold mb-4"> How AiRec ruiter Works </h2>
           <p> Three simple steps to transform your recruitment process.</p>
         </div>
 
-        <div className="flex justify-between gap-6">
+        <div className="flex justify-between gap-4 ">
 
           <div className="flex flex-col items-center">
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-100 text-blue-900 mb-8">
@@ -93,7 +93,7 @@ export default function Home() {
             </div>
 
             <h3 className="font-medium"> Create Interview </h3>
-            <p className="text-center text-gray-500" > Set up your job requirements and customize interview questions. </p>
+            <p className="text-center text-gray-500 px-20" > Set up your job requirements and customize interview questions. </p>
 
           </div>
 
@@ -106,8 +106,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h3 className="font-medium"> Create Interview </h3>
-            <p className="text-center text-gray-500" > Set up your job requirements and customize interview questions. </p>
+            <h3 className="font-medium"> Share with Candidates </h3>
+            <p className="text-center text-gray-500 px-20" > Send interview links to candidates to complete at their convenience. </p>
 
           </div>
 
@@ -121,8 +121,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h3 className="font-medium"> Create Interview </h3>
-            <p className="text-center text-gray-500" > Set up your job requirements and customize interview questions. </p>
+            <h3 className="font-medium"> Review Results </h3>
+            <p className="text-center text-gray-500 px-20" > Get AI-analyzed results, transcripts, and candidate comparisons. </p>
 
           </div>
         </div>
