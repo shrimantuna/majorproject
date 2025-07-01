@@ -13,8 +13,15 @@ import QuestionList from '@/app/(main)/dashboard/create-interview/_component/Que
 
 
 function Interview() {
-    const { interview_id } = useParams();
-    console.log(interview_id)
+    const [interview_id, setinterview_id] = useState(null);
+
+    //fetching id form url
+    useEffect(() => {
+        const path = window.location.pathname;
+        const id = path.split("/").pop();
+        setinterview_id(id);
+    }, []);
+
     const [interviewData, setInterviewData] = useState();
     const [userName, setUserName] = useState();
     const [userEmail, setUserEmail] = useState();
@@ -59,7 +66,7 @@ function Interview() {
         setInterviewInfo({
             userName: userName,
             userEmail: userEmail,
-            interviewData: Interview[0]
+            interviewData: Interviews[0]
 
         });
         router.push('/interview/' + interview_id + '/start/')
@@ -83,12 +90,12 @@ function Interview() {
 
                 <h2 className='font-bold text-xl mt-3'>{interviewData?.jobPosition}</h2>
                 <h2 className='flex gap-2 items-center text-gray-400 mt-4'> <Clock className='h-4 w-4' /> {interviewData?.duration} </h2>
-                <div className='w-full'>
+                <div className='w-full mb-5'>
                     <h2 className='font-medium'> Enter your full name</h2>
                     <Input placeholder='eg: jhon@gmail.com' className='mt-2' onChange={(event) => setUserName(event.target.value)} />
                 </div>
 
-                 <div className='w-full'>
+                <div className='w-full'>
                     <h2 className='font-medium'> Enter your Email</h2>
                     <Input placeholder='eg: jhon doe' className='mt-2' onChange={(event) => setUserEmail(event.target.value)} />
                 </div>
