@@ -71,8 +71,11 @@ function ScheduledInterview() {
                 </div>
             )}
 
+<<<<<<< HEAD
             {/* changes */}
 
+=======
+>>>>>>> 321d49f88fdb2b5f902ae0c6201014674429647d
 
         </div>
     )
