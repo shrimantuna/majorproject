@@ -32,7 +32,7 @@ function ScheduledInterview() {
 
             <h2 className='font-bold text-xl mb-6'> Interview List with Candidate Feedback</h2>
 
-            {interviewList?.length == 0 &&
+            {/* {interviewList?.length == 0 &&
                 <div className='p-5 flex flex-col gap-3 items-center bg-white mt-8 rounded-2xl py-16'>
                     <Camera className='h-10 w-10 text-primary' />
                     <h2 className='mb-2'>
@@ -53,7 +53,24 @@ function ScheduledInterview() {
 
 
                 </div>
-            }
+            } */}
+
+            {Array.isArray(interviewList) && interviewList.length === 0 && (
+                <div className='p-5 flex flex-col gap-3 items-center bg-white mt-8 rounded-2xl py-16'>
+                    <Camera className='h-10 w-10 text-primary' />
+                    <h2 className='mb-2'>You do not have any interview created</h2>
+                    <Button>Create new interview</Button>
+                </div>
+            )}
+
+            {Array.isArray(interviewList) && interviewList.length > 0 && (
+                <div className='grid grid-cols-2 xl:grid-cols-4 gap-5'>
+                    {interviewList.map((interview, index) => (
+                        <InterviewCard interview={interview} key={index} viewDetail={true} />
+                    ))}
+                </div>
+            )}
+
 
         </div>
     )
