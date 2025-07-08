@@ -1,21 +1,15 @@
 "use client"
-import { Button } from '@/components/ui/button';
-import { useUser } from '@/provider';
-import { supabase } from '@/services/supabaseClient';
-import { Camera } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import InterviewCard from '../create-interview/_component/InterviewCard';
-import { toast } from 'sonner';
+import InterviewCard from '../dashboard/create-interview/_component/InterviewCard';
+import { Camera } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { supabase } from '@/services/supabaseClient';
+import { useUser } from '@/provider';
 
-function LatestInterviewsList() {
+
+function AllInterview() {
     const [interviewList, setInterviewList] = useState([]);
-    const router = useRouter();
     const { user } = useUser();
-
-    const handleClick = () => {
-        router.push('/dashboard/create-interview');
-    };
 
     useEffect(() => {
 
@@ -41,7 +35,7 @@ function LatestInterviewsList() {
     return (
         <div className='my- 5 mt-10'>
             <h2 className='text-black-500 font-bold text-xl mb-6'>
-                Previously created interviews
+                All Previously created interviews
             </h2>
 
             {interviewList?.length == 0 &&
@@ -50,14 +44,14 @@ function LatestInterviewsList() {
                     <h2 className='mb-2'>
                         You do not have any interview created
                     </h2>
-                    <Button onClick={handleClick} >Create new interview</Button>
+                    <Button>Create new interview</Button>
 
                 </div>
             }
 
 
             {interviewList &&
-                <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
+                <div className='grid grid-cols-2 xl:grid-cols-4 gap-5'>
 
                     {interviewList.map((interview, index) => (
                         <InterviewCard interview={interview} key={index} />
@@ -69,5 +63,4 @@ function LatestInterviewsList() {
         </div>
     )
 }
-
-export default LatestInterviewsList
+export default AllInterview
