@@ -1,5 +1,5 @@
-import React from 'react';
-import { Home, ArrowRight, Info } from 'lucide-react';
+import React from "react";
+import { Home, ArrowRight, Info } from "lucide-react";
 
 const InterviewComplete = () => {
   return (
@@ -22,7 +22,9 @@ const InterviewComplete = () => {
           </svg>
         </div>
 
-        <h1 className="text-3xl font-bold text-center text-black">Interview Complete!</h1>
+        <h1 className="text-3xl font-bold text-center text-black">
+          Interview Complete!
+        </h1>
         <p className="text-lg text-gray-900 text-center">
           Thank you for participating in the AI-driven interview with Voxicruit
         </p>
@@ -34,10 +36,10 @@ const InterviewComplete = () => {
             className="w-full h-auto object-cover max-w-100"
             style={{
               backgroundImage: 'url("complete.jpg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              width: '1200px',
-              height: '300px'
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              width: "1200px",
+              height: "300px",
             }}
           />
         </div>
@@ -61,9 +63,12 @@ const InterviewComplete = () => {
             </svg>
           </div>
 
-          <h2 className="text-2xl font-semibold text-center text-[#A3EB1E]">What's Next?</h2>
+          <h2 className="text-2xl font-semibold text-center text-[#A3EB1E]">
+            What's Next?
+          </h2>
           <p className="text-gray-700 text-center">
-            The AIREC will review your interview responses and will contact you soon regarding the next steps.
+            The AIREC will review your interview responses and will contact you
+            soon regarding the next steps.
           </p>
           <p className="text-gray-500 text-sm text-center">
             <svg
