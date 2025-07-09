@@ -117,26 +117,25 @@ Key Guidelines:
     GenerateFeedback();
   };
 
-  vapi.on("call-start", () => {
-    console.log("Call has started");
-    toast("Call Connected... ");
-  });
+  // vapi.on("call-start", () => {
+  //   console.log("Call has started");
+  //   toast("Call Connected... ");
+  // });
 
-  vapi.on("speech-start", () => {
-    console.log("Assistant speech has started");
-    setActiveUser(false);
-  });
+  // vapi.on("speech-start", () => {
+  //   console.log("Assistant speech has started");
+  //   setActiveUser(false);
+  // });
 
-  vapi.on("speech-end", () => {
-    console.log("Assistant speech has ended");
-    setActiveUser(true);
-  });
+  // vapi.on("speech-end", () => {
+  //   console.log("Assistant speech has ended");
+  //   setActiveUser(true);
+  // });
 
-  vapi.on("call-end", () => {
-    console.log("Call has has ended");
-    toast("Interview has ended");
-    GenerateFeedback();
-  });
+  // vapi.on("call-end", () => {
+  //   console.log("Call has has ended");
+  //   toast("Interview has ended");
+  // });
 
   // vapi.on("message", (message) => {
   //   console.log(message?.conversation);
@@ -205,7 +204,7 @@ Key Guidelines:
       return;
     }
     console.log("calling api");
-    
+
     const result = await axios.post("/api/ai-feedback", {
       conversation: conversation,
     });
