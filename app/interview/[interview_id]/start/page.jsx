@@ -228,7 +228,7 @@ Key Guidelines:
   };
 
   const GenerateFeedback = async (conversationData = null) => {
-    console.log("feedback function called...");
+    console.log("Feedback function called...");
 
     setLoading(true);
 
@@ -240,7 +240,7 @@ Key Guidelines:
       return;
     }
 
-    console.log("calling api with conversation:", conversationToUse);
+    console.log("Calling API with conversation:", conversationToUse);
 
     try {
       const result = await axios.post("/api/ai-feedback", {
@@ -249,13 +249,6 @@ Key Guidelines:
 
       console.log("AI Feedback Result:", result);
 
-      // Check if the API returned an error
-      if (result.data?.error) {
-        toast(`Error: ${result.data.error}`);
-        setLoading(false);
-        return;
-      }
-
       const rawContent = result.data?.content;
       if (!rawContent) {
         toast("No feedback content found.");
@@ -263,24 +256,34 @@ Key Guidelines:
         return;
       }
 
-      // Remove ```json and ``` wrapper
-      const cleaned = rawContent
-        .replace(/^```json/, "")
-        .replace(/^```/, "")
-        .replace(/```$/, "")
-        .trim();
-
+      // Try direct parsing first
       let parsed;
       try {
-        parsed = JSON.parse(cleaned);
+        parsed = JSON.parse(rawContent);
       } catch (err) {
-        console.error("Failed to parse AI feedback:", err);
-        toast("Could not parse AI feedback.");
+        console.warn("Direct parse failed. Attempting cleanup...");
+
+        // Remove ```json and ``` if AI returns markdown
+        const cleaned = rawContent
+          .replace(/```(?:json)?([\s\S]*?)```/, "$1")
+          .trim();
+        try {
+          parsed = JSON.parse(cleaned);
+        } catch (err2) {
+          console.error("Failed to parse AI feedback after cleanup:", err2);
+          toast("Could not parse AI feedback.");
+          setLoading(false);
+          return;
+        }
+      }
+
+      const feedbackData = parsed?.feedback;
+
+      if (!feedbackData) {
+        toast("Feedback content is missing.");
         setLoading(false);
         return;
       }
-
-      const feedbackData = parsed.feedback;
 
       // Save to database
       const { data, error } = await supabase
@@ -291,7 +294,7 @@ Key Guidelines:
             userEmail: interviewInfo?.userEmail,
             interview_id: interview_id,
             feedback: feedbackData,
-            recommended: false,
+            recommended: feedbackData.recommendation?.toLowerCase() === "yes",
           },
         ])
         .select();
@@ -304,7 +307,7 @@ Key Guidelines:
       }
 
       console.log("Feedback saved:", data);
-      route.replace("/interview/" + interview_id + "/completed/");
+      route.replace(`/interview/${interview_id}/completed/`);
     } catch (error) {
       console.error("Feedback generation error:", error);
       toast("Error generating feedback.");

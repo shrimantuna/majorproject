@@ -7,14 +7,14 @@ function DashboardProvider({ children }) {
     return (
         <SidebarProvider>
             <AppSidebar />
-                <div className='w-full'>
-                    <SidebarTrigger />
-                    <WelcomeContainer/>
-                    {children}
-                </div>
-        
+            <div className='w-full'>
+                <SidebarTrigger />
+                <WelcomeContainer />
+                {children}
+            </div>
+
         </SidebarProvider>
-    )  
- }
+    )
+}
 
 export default DashboardProvider

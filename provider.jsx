@@ -49,7 +49,7 @@ function Provider({ children }) {
 
     }
 
-    return (
+    return (    
         <UserDetailContext.Provider value={{ user, setUser }}>
 
             <div> {children} </div>

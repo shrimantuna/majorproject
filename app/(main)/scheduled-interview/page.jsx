@@ -20,7 +20,15 @@ function ScheduledInterview() {
   const GetInterviewList = async () => {
     const { data, error } = await supabase
       .from("Interviews")
-      .select("jobPosition, duration, interview_id") // Removed faulty relationship join
+      .select(
+        `
+        id,
+        jobPosition,
+        duration,
+        created_at,
+        interview-feedback(id)
+      `
+      )
       .eq("userEmail", user.email)
       .order("id", { ascending: false });
 
@@ -50,9 +58,9 @@ function ScheduledInterview() {
 
       {Array.isArray(interviewList) && interviewList.length > 0 && (
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-5">
-          {interviewList.map((interview, index) => (
+          {interviewList.map((interview) => (
             <InterviewCard
-              key={index}
+              key={interview.id}
               interview={interview}
               viewDetail={true}
             />
