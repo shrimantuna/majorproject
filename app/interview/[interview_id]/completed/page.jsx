@@ -8,7 +8,7 @@ const InterviewComplete = () => {
         <div className="rounded-full bg-seaGreen p-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-14 w-14 text-[#A3EB1E]"
+            className="h-14 w-14 text-green-500"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -31,7 +31,7 @@ const InterviewComplete = () => {
 
         <div className="rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/complete.jpg"
+            src="/video_conferece_04.jpg"
             alt="Interview Illustration"
             className="w-full h-auto object-cover max-w-100"
             style={{
@@ -63,7 +63,7 @@ const InterviewComplete = () => {
             </svg>
           </div>
 
-          <h2 className="text-2xl font-semibold text-center text-[#A3EB1E]">
+          <h2 className="text-2xl font-semibold text-center text-blue-900">
             What's Next?
           </h2>
           <p className="text-gray-700 text-center">
@@ -90,9 +90,9 @@ const InterviewComplete = () => {
         </div>
 
         <div className="flex space-x-4">
-          <button className="bg-midnightLightest text-[#A3EB1E] hover:text-black rounded-lg py-3 px-6 flex items-center space-x-2 transition duration-300 ease-in-out cursor-pointer">
+          <button className="bg-midnightLightest  text-blue-900 hover:text-black rounded-lg py-3 px-6 flex items-center space-x-2 transition duration-300 ease-in-out cursor-pointer">
             <Home className="h-5 w-5" />
-            <span className={"text-[#A3EB1E]"}>Return to Homepage</span>
+            <span className={" text-blue-900"}>Return to Homepage</span>
           </button>
           <button className="bg-electricBlue hover:bg-electricBlueDark text-white rounded-lg py-3 px-6 flex items-center space-x-2 transition duration-300 ease-in-out">
             <span>View Other Opportunities</span>
